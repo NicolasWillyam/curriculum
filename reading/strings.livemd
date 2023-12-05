@@ -205,7 +205,7 @@ IO.puts(string)
 ```
 
 ```elixir
-string = "If you don't escape using backslash \\, then #{} doesn't appear"
+string = "If you don't escape using backslash \, then #{} doesn't appear"
 
 IO.puts(string)
 ```
