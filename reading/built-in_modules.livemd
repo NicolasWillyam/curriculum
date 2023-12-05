@@ -34,9 +34,9 @@ Mix.install([
 
 Upon completing this lesson, a student should be able to answer the following questions.
 
-* Given you're working with a particular data type such as an integer or map, where in the Elixir documentation should you look for relevant functionality?
-* How do you safely inspect any data type?
-* What are some common built-in functions developers use the most, and how do you use them?
+- Given you're working with a particular data type such as an integer or map, where in the Elixir documentation should you look for relevant functionality?
+- How do you safely inspect any data type?
+- What are some common built-in functions developers use the most, and how do you use them?
 
 ## Overview
 
@@ -66,11 +66,11 @@ Most common data types have an associated module which contains functionality re
 
 For example:
 
-* [Integer](https://hexdocs.pm/elixir/Integer.html)
-* [String](https://hexdocs.pm/elixir/String.html)
-* [List](https://hexdocs.pm/elixir/List.html)
-* [Map](https://hexdocs.pm/elixir/Map.html)
-* [Keyword](https://hexdocs.pm/elixir/Keyword.html)
+- [Integer](https://hexdocs.pm/elixir/Integer.html)
+- [String](https://hexdocs.pm/elixir/String.html)
+- [List](https://hexdocs.pm/elixir/List.html)
+- [Map](https://hexdocs.pm/elixir/Map.html)
+- [Keyword](https://hexdocs.pm/elixir/Keyword.html)
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -110,11 +110,10 @@ Use [Kernel.elem/2](https://hexdocs.pm/elixir/Kernel.html#elem/2) to retrieve `1
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  tuple = {0, 4, 1, 100, 5, 7}
-  elem(tuple, 3)
-  ```
+```elixir
+tuple = {0, 4, 1, 100, 5, 7}
+elem(tuple, 3)
+```
 
 </details>
 
@@ -140,17 +139,16 @@ Use the [Kernel](https://hexdocs.pm/elixir/Kernel.html) module to check the type
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  is_atom(:example)
-  is_map(%{})
-  is_binary("")
-  is_integer(1)
-  is_float(1.0)
-  is_boolean(true)
-  is_list([])
-  is_tuple({})
-  ```
+```elixir
+is_atom(:example)
+is_map(%{})
+is_binary("")
+is_integer(1)
+is_float(1.0)
+is_boolean(true)
+is_list([])
+is_tuple({})
+```
 
 </details>
 
@@ -214,11 +212,10 @@ Created a `capped_seconds` variable that uses the value of `seconds` and cannot 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  seconds = 61
-  capped_seconds = max(min(seconds, 59), 0)
-  ```
+```elixir
+seconds = 61
+capped_seconds = max(min(seconds, 59), 0)
+```
 
 </details>
 
@@ -260,14 +257,13 @@ Use [Kernel.inspect/2](https://hexdocs.pm/elixir/Kernel.html#inspect/2) to safel
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
+```elixir
+map = %{}
+list = [1, 2, 3]
+tuple = {1, 2, 3}
 
-  ```elixir
-  map = %{}
-  list = [1, 2, 3]
-  tuple = {1, 2, 3}
-
-  "#{inspect(map)} #{inspect(list)} #{inspect(tuple)}"
-  ```
+"#{inspect(map)} #{inspect(list)} #{inspect(tuple)}"
+```
 
 </details>
 
@@ -366,13 +362,13 @@ The [String](https://hexdocs.pm/elixir/String.html#functions) module contains fu
 
 Here are a few common functions to get you started.
 
-* [String.at/2](https://hexdocs.pm/elixir/String.html#at/2) gets the value at the index of a string.
-* [String.contains?/2](https://hexdocs.pm/elixir/String.html#contains?/2) check if a string contains a value.
-* [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2) capitalize the first letter in a string and leaves the rest lowercase.
-* [String.downcase/2](https://hexdocs.pm/elixir/String.html#downcase/2) convert a string to all lowercase.
-* [String.split/3](https://hexdocs.pm/elixir/String.html#split/3) split the string into a list of words.
-* [String.trim/1](https://hexdocs.pm/elixir/String.html#trim/1) remove whitespace from a string.
-* [String.upcase/2](https://hexdocs.pm/elixir/String.html#upcase/2) convert a string to ALL CAPS.
+- [String.at/2](https://hexdocs.pm/elixir/String.html#at/2) gets the value at the index of a string.
+- [String.contains?/2](https://hexdocs.pm/elixir/String.html#contains?/2) check if a string contains a value.
+- [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2) capitalize the first letter in a string and leaves the rest lowercase.
+- [String.downcase/2](https://hexdocs.pm/elixir/String.html#downcase/2) convert a string to all lowercase.
+- [String.split/3](https://hexdocs.pm/elixir/String.html#split/3) split the string into a list of words.
+- [String.trim/1](https://hexdocs.pm/elixir/String.html#trim/1) remove whitespace from a string.
+- [String.upcase/2](https://hexdocs.pm/elixir/String.html#upcase/2) convert a string to ALL CAPS.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -431,10 +427,9 @@ Use the [String.at/2](https://hexdocs.pm/elixir/String.html#at/2) function to ge
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.at("hello", 2)
-  ```
+```elixir
+String.at("hello", 2)
+```
 
 </details>
 
@@ -447,10 +442,9 @@ Use the [String.at/2](https://hexdocs.pm/elixir/String.html#at/2) function to re
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.at("hello", 4)
-  ```
+```elixir
+String.at("hello", 4)
+```
 
 </details>
 
@@ -463,10 +457,9 @@ Use the [String.contains?/2](https://hexdocs.pm/elixir/String.html#contains?/2) 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.contains("hello", "lo")
-  ```
+```elixir
+String.contains("hello", "lo")
+```
 
 </details>
 
@@ -479,10 +472,9 @@ Use [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2) to
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.capitalize("hello")
-  ```
+```elixir
+String.capitalize("hello")
+```
 
 </details>
 
@@ -495,10 +487,9 @@ Use [String.upcase/2](https://hexdocs.pm/elixir/String.html#upcase/2) to upcase 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.upcase("hello")
-  ```
+```elixir
+String.upcase("hello")
+```
 
 </details>
 
@@ -511,10 +502,9 @@ Use [String.downcase/2](https://hexdocs.pm/elixir/String.html#downcase/2) to dow
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.downcase("HELLO")
-  ```
+```elixir
+String.downcase("HELLO")
+```
 
 </details>
 
@@ -527,10 +517,9 @@ Use [String.split/3](https://hexdocs.pm/elixir/String.html#split/3) to split the
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.split("have,a,great,day", ",")
-  ```
+```elixir
+String.split("have,a,great,day", ",")
+```
 
 </details>
 
@@ -543,10 +532,9 @@ Use [String.trim/1](https://hexdocs.pm/elixir/String.html#trim/1) to remove whit
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  String.trim("  hello!  ")
-  ```
+```elixir
+String.trim("  hello!  ")
+```
 
 </details>
 
@@ -560,13 +548,13 @@ The [List](https://hexdocs.pm/elixir/List.html) module contains functionality re
 
 Here are a few common functions to get you started.
 
-* [List.delete_at/2](https://hexdocs.pm/elixir/List.html#delete_at/2) remove an element at an index in a list.
-* [List.first/2](https://hexdocs.pm/elixir/List.html#first/2) retrieve the first element in a list similar to `hd/1` or pattern matching on the head and tail of a list.
-* [List.flatten/2](https://hexdocs.pm/elixir/List.html#flatten/2) flatten nested lists within a list.
-* [List.insert_at/3](https://hexdocs.pm/elixir/List.html#insert_at/3) insert an element at a specified index within a list.
-* [List.last/2](https://hexdocs.pm/elixir/List.html#last/2) retrieve the last element in a list.
-* [List.update_at/3](https://hexdocs.pm/elixir/List.html#update_at/3) update an element at a specified index within a list.
-* [List.zip/1](https://hexdocs.pm/elixir/List.html#zip/1) combine elements from multiple lists into a single list of tuples.
+- [List.delete_at/2](https://hexdocs.pm/elixir/List.html#delete_at/2) remove an element at an index in a list.
+- [List.first/2](https://hexdocs.pm/elixir/List.html#first/2) retrieve the first element in a list similar to `hd/1` or pattern matching on the head and tail of a list.
+- [List.flatten/2](https://hexdocs.pm/elixir/List.html#flatten/2) flatten nested lists within a list.
+- [List.insert_at/3](https://hexdocs.pm/elixir/List.html#insert_at/3) insert an element at a specified index within a list.
+- [List.last/2](https://hexdocs.pm/elixir/List.html#last/2) retrieve the last element in a list.
+- [List.update_at/3](https://hexdocs.pm/elixir/List.html#update_at/3) update an element at a specified index within a list.
+- [List.zip/1](https://hexdocs.pm/elixir/List.html#zip/1) combine elements from multiple lists into a single list of tuples.
 
 ### Mutation
 
@@ -614,10 +602,9 @@ Use [List.delete_at/2](https://hexdocs.pm/elixir/List.html#delete_at/2) to remov
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  List.delete_at([2, 1, 3], 0)
-  ```
+```elixir
+List.delete_at([2, 1, 3], 0)
+```
 
 </details>
 
@@ -630,10 +617,9 @@ Use [List.flatten/1](https://hexdocs.pm/elixir/List.html#flatten/1) to flatten t
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  List.flatten([1, 2, [3, 4, 5], 6, [7, [8, [9]]]])
-  ```
+```elixir
+List.flatten([1, 2, [3, 4, 5], 6, [7, [8, [9]]]])
+```
 
 </details>
 
@@ -646,10 +632,9 @@ Use [List.insert_at/3](https://hexdocs.pm/elixir/List.html#insert_at/3) to inser
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  List.insert_at([1, 3], 1, 2)
-  ```
+```elixir
+List.insert_at([1, 3], 1, 2)
+```
 
 </details>
 
@@ -662,16 +647,15 @@ Use [List.last/2](https://hexdocs.pm/elixir/List.html#last/2) to retrieve the la
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
+```elixir
+List.last(Enum.to_list(1..10000))
+```
 
-  ```elixir
-  List.last(Enum.to_list(1..10000))
-  ```
+You might also use the piper operator `|>`.
 
-  You might also use the piper operator `|>`.
-
-  ```elixir
-  1..10000 |> Enum.to_list() |> List.last()
-  ```
+```elixir
+1..10000 |> Enum.to_list() |> List.last()
+```
 
 </details>
 
@@ -684,10 +668,9 @@ Use [List.update_at/3](https://hexdocs.pm/elixir/List.html#update_at/3) to subtr
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  List.update_at([1, 4, 3], 1, fn elem -> elem - 2 end)
-  ```
+```elixir
+List.update_at([1, 4, 3], 1, fn elem -> elem - 2 end)
+```
 
 </details>
 
@@ -700,13 +683,12 @@ Use [List.zip/1](https://hexdocs.pm/elixir/List.html#zip/1) to combine these two
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
+```elixir
+letters = ["a", "b", "c"]
+numbers = [1, 2, 3]
 
-  ```elixir
-  letters = ["a", "b", "c"]
-  numbers = [1, 2, 3]
-
-  List.zip([letters, numbers])
-  ```
+List.zip([letters, numbers])
+```
 
 </details>
 
@@ -721,13 +703,13 @@ The [Map](https://hexdocs.pm/elixir/Map.html#functions) module contains function
 
 Here are a few common functions to get you started.
 
-* [Map.get/3](https://hexdocs.pm/elixir/Map.html#get/3) retrieve values in a map.
-* [Map.put/3](https://hexdocs.pm/elixir/Map.html#put/3) put a value into a map.
-* [Map.keys/1](https://hexdocs.pm/elixir/Map.html#keys/1) list the keys in a map.
-* [Map.delete/2](https://hexdocs.pm/elixir/Map.html#delete/2) remove a key and value from a map.
-* [Map.merge/2](https://hexdocs.pm/elixir/Map.html#merge/2) merge two maps together.
-* [Map.update/4](https://hexdocs.pm/elixir/Map.html#update/4) and [Map.update!/3](https://hexdocs.pm/elixir/Map.html#update!/3) update a map using the existing value of the updated key.
-* [Map.values/1](https://hexdocs.pm/elixir/Map.html#values/1) list the values in a map.
+- [Map.get/3](https://hexdocs.pm/elixir/Map.html#get/3) retrieve values in a map.
+- [Map.put/3](https://hexdocs.pm/elixir/Map.html#put/3) put a value into a map.
+- [Map.keys/1](https://hexdocs.pm/elixir/Map.html#keys/1) list the keys in a map.
+- [Map.delete/2](https://hexdocs.pm/elixir/Map.html#delete/2) remove a key and value from a map.
+- [Map.merge/2](https://hexdocs.pm/elixir/Map.html#merge/2) merge two maps together.
+- [Map.update/4](https://hexdocs.pm/elixir/Map.html#update/4) and [Map.update!/3](https://hexdocs.pm/elixir/Map.html#update!/3) update a map using the existing value of the updated key.
+- [Map.values/1](https://hexdocs.pm/elixir/Map.html#values/1) list the values in a map.
 
 ### Mutation
 
@@ -760,10 +742,9 @@ Use [Map.get/3](https://hexdocs.pm/elixir/Map.html#get/3) to retrieve the `"worl
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Map.get(%{hello: "world"}, :hello)
-  ```
+```elixir
+Map.get(%{hello: "world"}, :hello)
+```
 
 </details>
 
@@ -776,10 +757,9 @@ Use [Map.put/3](https://hexdocs.pm/elixir/Map.html#put/3) to add the key `:two` 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Map.put(%{one: 1}, :two, 2)
-  ```
+```elixir
+Map.put(%{one: 1}, :two, 2)
+```
 
 </details>
 
@@ -792,10 +772,9 @@ Use [Map.keys/1](https://hexdocs.pm/elixir/Map.html#keys/1) to retrieve the keys
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Map.keys(%{key1: 1, key2: 2, key3: 3})
-  ```
+```elixir
+Map.keys(%{key1: 1, key2: 2, key3: 3})
+```
 
 </details>
 
@@ -808,10 +787,9 @@ Use [Map.delete/2](https://hexdocs.pm/elixir/Map.html#delete/2) to remove `:key1
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Map.delete(%{key1: 1, key2: 2, key3: 3}, :key1)
-  ```
+```elixir
+Map.delete(%{key1: 1, key2: 2, key3: 3}, :key1)
+```
 
 </details>
 
@@ -824,10 +802,9 @@ Use [Map.merge/2](https://hexdocs.pm/elixir/Map.html#merge/2) to combine `%{one:
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example Solution</summary>
 
-
-  ```elixir
-  Map.merge(%{one: 1}, %{two: 2})
-  ```
+```elixir
+Map.merge(%{one: 1}, %{two: 2})
+```
 
 </details>
 
@@ -840,10 +817,9 @@ Use [Map.update/4](https://hexdocs.pm/elixir/Map.html#update/4) or [Map.update!/
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example Solution</summary>
 
-
-  ```elixir
-  Map.update(%{count: 10}, :count, 0, fn count -> count + 5 end)
-  ```
+```elixir
+Map.update(%{count: 10}, :count, 0, fn count -> count + 5 end)
+```
 
 </details>
 
@@ -856,10 +832,9 @@ Use [Map.values/1](https://hexdocs.pm/elixir/Map.html#values/1) to retrieve the 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Map.values(%{key1: 1, key2: 2, key3: 3})
-  ```
+```elixir
+Map.values(%{key1: 1, key2: 2, key3: 3})
+```
 
 </details>
 
@@ -873,9 +848,9 @@ The [Keyword](https://hexdocs.pm/elixir/Keyword.html#functions) module contains 
 
 Here are a few common functions to get you started.
 
-* [Keyword.get/3](https://hexdocs.pm/elixir/Keyword.html#get/3) retrieve values in a keyword list.
-* [Keyword.keys/1](https://hexdocs.pm/elixir/Keyword.html#keys/1) list the keys in a keyword list.
-* [Keyword.keyword?/1](https://hexdocs.pm/elixir/Keyword.html#keyword?/1) check if some data is a keyword list.
+- [Keyword.get/3](https://hexdocs.pm/elixir/Keyword.html#get/3) retrieve values in a keyword list.
+- [Keyword.keys/1](https://hexdocs.pm/elixir/Keyword.html#keys/1) list the keys in a keyword list.
+- [Keyword.keyword?/1](https://hexdocs.pm/elixir/Keyword.html#keyword?/1) check if some data is a keyword list.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -919,10 +894,9 @@ Use [Keyword.get/3](https://hexdocs.pm/elixir/Keyword.html#get/3) to access the 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Keyword.get([color: "red"], :color)
-  ```
+```elixir
+Keyword.get([color: "red"], :color)
+```
 
 </details>
 
@@ -935,10 +909,9 @@ Use [Keyword.get/3](https://hexdocs.pm/elixir/Keyword.html#get/3) to access the 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Keyword.get([], :color, "blue")
-  ```
+```elixir
+Keyword.get([], :color, "blue")
+```
 
 </details>
 
@@ -951,10 +924,9 @@ Use the [Keyword.keys/1](https://hexdocs.pm/elixir/Keyword.html#keys/1) function
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Keyword.keys([one: 1, two: 2, three: 3])
-  ```
+```elixir
+Keyword.keys([one: 1, two: 2, three: 3])
+```
 
 </details>
 
@@ -967,10 +939,9 @@ Use the [Keyword.keyword?/1](https://hexdocs.pm/elixir/Keyword.html#keyword?/1) 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-
-  ```elixir
-  Keyword.keyword?([key: "value"])
-  ```
+```elixir
+Keyword.keyword?([key: "value"])
+```
 
 </details>
 
@@ -983,13 +954,13 @@ Use the [Keyword.keyword?/1](https://hexdocs.pm/elixir/Keyword.html#keyword?/1) 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-  An empty list is technically a keyword list. That's because there's no difference between an empty keyword list and an empty list.
+An empty list is technically a keyword list. That's because there's no difference between an empty keyword list and an empty list.
 
-  Technically, all of the elements in an empty list follow the `{:atom, value}` pattern that a keyword list enforces. Or perhaps it's better to say that no elements violate the pattern.
+Technically, all of the elements in an empty list follow the `{:atom, value}` pattern that a keyword list enforces. Or perhaps it's better to say that no elements violate the pattern.
 
-  ```elixir
-  Keyword.keyword?([])
-  ```
+```elixir
+Keyword.keyword?([])
+```
 
 </details>
 
@@ -1002,10 +973,11 @@ Use the [Keyword.keyword?/1](https://hexdocs.pm/elixir/Keyword.html#keyword?/1) 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
   <summary>Example solution</summary>
 
-  A list is not a keyword list if it has any elements that don't follow the `{:atom, term}` structure.
-  ```elixir
-  Keyword.keyword?([1, 2, 3])
-  ```
+A list is not a keyword list if it has any elements that don't follow the `{:atom, term}` structure.
+
+```elixir
+Keyword.keyword?([1, 2, 3])
+```
 
 </details>
 
@@ -1017,13 +989,13 @@ Use the [Keyword.keyword?/1](https://hexdocs.pm/elixir/Keyword.html#keyword?/1) 
 
 Consider the following resource(s) to deepen your understanding of the topic.
 
-* [Hexdocs: Kernel](https://hexdocs.pm/elixir/Kernel.html)
-* [Hexdocs: Integer](https://hexdocs.pm/elixir/Integer.html)
-* [Hexdocs: String](https://hexdocs.pm/elixir/String.html)
-* [Hexdocs: List](https://hexdocs.pm/elixir/List.html)
-* [Hexdocs: Map](https://hexdocs.pm/elixir/Map.html)
-* [Hexdocs: Keyword](https://hexdocs.pm/elixir/Keyword.html)
-* [Hexdocs: Tuple](https://hexdocs.pm/elixir/Tuple.html)
+- [Hexdocs: Kernel](https://hexdocs.pm/elixir/Kernel.html)
+- [Hexdocs: Integer](https://hexdocs.pm/elixir/Integer.html)
+- [Hexdocs: String](https://hexdocs.pm/elixir/String.html)
+- [Hexdocs: List](https://hexdocs.pm/elixir/List.html)
+- [Hexdocs: Map](https://hexdocs.pm/elixir/Map.html)
+- [Hexdocs: Keyword](https://hexdocs.pm/elixir/Keyword.html)
+- [Hexdocs: Tuple](https://hexdocs.pm/elixir/Tuple.html)
 
 ## Commit Your Progress
 
