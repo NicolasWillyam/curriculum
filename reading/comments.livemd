@@ -42,7 +42,7 @@ Upon completing this lesson, a student should be able to answer the following qu
 You can create inline comments in your code in Elixir using `#`. Anything after the `#` on the same line will be part of the comment
 
 ```elixir
-# You Can Use Comments To Leave Messages In Your Code.
+# hello
 ```
 
 It's sometimes handy for documenting what your code does. However, it's often better to use comments sparingly.
@@ -76,16 +76,20 @@ Click on the keyboard icon <i class="ri-keyboard-box-fill"></i> in the left side
 In the Elixir cell below, create a comment `# hello world`
 
 ```elixir
+# hello world
+```
 
+```elixir
+# hello world
 ```
 
 In the Elixir cell below, comment all of the code out using the **Toggle lines comment** keyboard shortcut.
 
 ```elixir
-1 + 1
-2 + 3
-3 + 1 + 2
-123 + 12 + 256
+# 1 + 1
+# 2 + 3
+# 3 + 1 + 2
+# 123 + 12 + 256
 ```
 
 ## Further Reading
