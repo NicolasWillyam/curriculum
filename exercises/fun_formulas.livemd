@@ -69,6 +69,7 @@ Enter your solution below.
 ```elixir
 a = 12
 b = 42
+
 a / b * 100
 ```
 
