@@ -190,7 +190,7 @@ Use comparison operators to determine if `"hello"` is equal to `"hello"`.
 </details>
 
 ```elixir
-
+"hello" == "hello"
 ```
 
 ## Further Reading
