@@ -169,7 +169,7 @@ and it can be named any valid variable name.
 Let's rename it to `number` to clarify that we expect the input to be a number.
 
 ```elixir
-double = fn number -> number end
+double = fn number -> number + 1 end
 ```
 
 Now the function head takes in a value. We have to pass it
@@ -298,7 +298,8 @@ is_even? = fn int -> rem(int, 2) == 0 end
 Enter your solution below.
 
 ```elixir
-
+is_even? = fn x -> rem(x, 2) == 0 end
+is_even?.(2)
 ```
 
 ## Multi-Parameter Functions
@@ -364,7 +365,8 @@ calculate_force = fn mass, acceleration -> mass * acceleration end
 Enter your solution below.
 
 ```elixir
-
+calculate_force = fn a, b -> a * b end
+calculate_force.(10, 10)
 ```
 
 ## Shorthand Syntax
@@ -413,7 +415,8 @@ subtract = &(&1 - &2)
 Enter your solution below.
 
 ```elixir
-
+subtract = &(&1 - &2)
+subtract.(10, 20)
 ```
 
 ### Your Turn
@@ -439,7 +442,9 @@ multiply_three = &(&1 * &2 * &3)
 Enter your solution below.
 
 ```elixir
-
+multiply_three = &(&1 * &2 * &3)
+# 30
+multiply_three.(2, 5, 3)
 ```
 
 ## First-class Functions
@@ -500,7 +505,7 @@ Callback functions are useful for creating re-usable behavior with slight altera
 [Enum.map/2](https://hexdocs.pm/elixir/Enum.html#map/2) can accept a list as the first argument, and a callback function as the second argument. The callback function is applied to every element in the list to create a new list.
 
 ```elixir
-Enum.map([1, 2, 3], fn element -> element * 2 end)
+Enum.map([1, 2, 3], fn element -> element * 10 end)
 ```
 
 ### Your Turn
@@ -527,7 +532,7 @@ call_with_10_and_20 = fn callback -> callback.(10, 20) end
 Enter your solution below.
 
 ```elixir
-call_with_10_and_20 = nil
+call_with_10_and_20 = fn callback -> callback.(10, 20) end
 ```
 
 ## Pipe Operator
@@ -640,7 +645,14 @@ multiply = fn int1, int2 -> int1 * int2 end
 Enter your solution below.
 
 ```elixir
+add = fn int1, int2 -> int1 + int2 end
+subtract = fn int1, int2 -> int1 - int2 end
+multiply = fn int1, int2 -> int1 * int2 end
 
+10
+|> add.(2)
+|> multiply.(2)
+|> subtract.(4)
 ```
 
 ## Commit Your Progress
