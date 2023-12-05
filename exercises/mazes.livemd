@@ -152,6 +152,8 @@ maze = %{
     }
   }
 }
+
+maze["south"]["east"]["south"]["west"]["south"]["west"]["south"]["east"]["south"]
 ```
 
 ## Bonus: Treasure Map
@@ -197,6 +199,8 @@ treasure_map = %{
     }
   }
 }
+
+treasure_map["south ten paces"][10][:"east three paces"][[1, 2, 3]][{"turn", "right"}][:dig]
 ```
 
 ### (Extra Bonus) Update The Treasure Map
@@ -306,7 +310,27 @@ at least a 5 * 5 in width and height.
 Enter your solution below.
 
 ```elixir
+maze = %{
+  "south" => %{
+    "east" => %{
+      "south" => %{
+        "west" => %{
+          "south" => %{
+            "west" => %{
+              "south" => %{
+                "east" => %{
+                  "south" => "Exit!"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
+maze["south"]["east"]["south"]["west"]["south"]["west"]["south"]["east"]["south"]
 ```
 
 ## Commit Your Progress
