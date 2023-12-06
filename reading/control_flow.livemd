@@ -338,9 +338,9 @@ We can use pattern matching the same way we already have with the match operator
 So now, by matching on `:exactly` using a variable, we can trigger the first case below.
 
 ```elixir
-case {:exactly, :equall} do
+case {:exactly, :equal} do
   {_mostly, :equal} -> "matching case"
-  {:exactly, :equall} -> "exactly equal case"
+  {:exactly, :equal} -> "exactly equal case"
 end
 ```
 
