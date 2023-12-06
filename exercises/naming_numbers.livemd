@@ -84,7 +84,22 @@ naming_numbers.(1)
 Enter your solution below.
 
 ```elixir
+naming_numbers = fn number ->
+  case number do
+    0 -> "zero"
+    1 -> "one"
+    2 -> "two"
+    3 -> "three"
+    4 -> "four"
+    5 -> "five"
+    6 -> "six"
+    7 -> "seven"
+    8 -> "eight"
+    9 -> "night"
+  end
+end
 
+naming_numbers.(1)
 ```
 
 ## Numbering Names
@@ -181,7 +196,22 @@ flowchart
 </details>
 
 ```elixir
+naming_numbers = fn number ->
+  cond do
+    number == "zero" or number == "Zero" -> 0
+    number == "one" or number == "One" -> 1
+    number == "two" or number == "Two" -> 2
+    number == "three" or number == "Three" -> 3
+    number == "four" or number == "Four" -> 4
+    number == "five" or number == "Five" -> 5
+    number == "six" or number == "Six" -> 6
+    number == "seven" or number == "Seven" -> 7
+    number == "eight" or number == "Eight" -> 8
+    number == "nine" or number == "Nine" -> 9
+  end
+end
 
+naming_numbers.("Zero")
 ```
 
 ## Commit Your Progress
