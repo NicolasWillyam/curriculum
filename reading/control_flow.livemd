@@ -133,7 +133,13 @@ end
 Enter your solution below.
 
 ```elixir
+temperature = 10
 
+if temperature > 10 do
+  :hot
+else
+  :cold
+end
 ```
 
 ## Clear Control Flow
@@ -278,7 +284,7 @@ We can provide any number of cases. Cases use pattern matching to decide which r
 Return each value from `1` to `5` by changing the `condition` variable below.
 
 ```elixir
-condition = nil
+condition = %{key: "value"}
 
 case condition do
   :red -> 1
@@ -317,7 +323,7 @@ If the values would throw a [MatchError](https://hexdocs.pm/elixir/MatchError.ht
 That's why the following `case` statement does not trigger the `"non-matching case"`.
 
 ```elixir
-case {:exactly, :equal} do
+case {:not_exactly, :equal} do
   {:not_exactly, :equal} -> "non-matching case"
   {:exactly, :equal} -> "matching case"
 end
@@ -332,16 +338,16 @@ We can use pattern matching the same way we already have with the match operator
 So now, by matching on `:exactly` using a variable, we can trigger the first case below.
 
 ```elixir
-case {:exactly, :equal} do
+case {:exactly, :equall} do
   {_mostly, :equal} -> "matching case"
-  {:exactly, :equal} -> "exactly equal case"
+  {:exactly, :equall} -> "exactly equal case"
 end
 ```
 
 `case` statements will raise a **CaseClauseError** if the value provided doesn't match any case.
 
 ```elixir
-case "no match" do
+case :sunny do
   :sunny -> "t-shirt"
 end
 ```
@@ -349,9 +355,9 @@ end
 To provide a default case for the `case` statement, you can use a variable, which pattern matches with any Elixir value.
 
 ```elixir
-case "no match" do
+case "match" do
   "sunnny" -> "wear a t-shirt"
-  anything -> "wear clothing"
+  _anything -> "wear clothing"
 end
 ```
 
@@ -378,7 +384,7 @@ end
 Return each result from `1` to `5` by changing the `condition` variable below.
 
 ```elixir
-condition = nil
+condition = {1, 2, %{key: [1, 2, 3]}}
 
 case condition do
   [1, 2, 3] -> 1
@@ -406,7 +412,7 @@ For example, if we expand our weather application to handle conditions that depe
 
 ```mermaid
 flowchart
-temperature --> t1[0<] --> r1[thick coat]
+temperature --> t1[0<5] --> r1[thick coat]
 temperature --> t2[5-10] --> r2[coat]
 temperature --> t3[11-15] --> r3[light coat]
 temperature --> t4[16-20] --> r4[heavy shirt]
@@ -517,7 +523,14 @@ end
 </details>
 
 ```elixir
+grade = 56
 
+cond do
+  grade >= 1 and grade <= 54 -> "D"
+  grade >= 55 and grade <= 69 -> "C"
+  grade >= 70 and grade <= 84 -> "B"
+  grade >= 85 and grade <= 100 -> "A"
+end
 ```
 
 ## Unless
@@ -571,7 +584,11 @@ In the Elixir cell below
 * Create an `unless` statement. which returns `"awake"` unless `tired`.
 
 ```elixir
+tired = false
 
+unless tired do
+  "awake"
+end
 ```
 
 ## Commit Your Progress
