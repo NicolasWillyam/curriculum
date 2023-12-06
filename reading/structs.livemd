@@ -322,7 +322,7 @@ instance.key
 However, we can't use square bracket notation. That makes sense, since a struct instance should always have the keys the struct definition defines.
 
 ```elixir
-instance[:key]
+instance.key
 ```
 
 ## Further Reading
