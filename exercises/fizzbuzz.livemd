@@ -103,6 +103,8 @@ defmodule FizzBuzz do
     end)
   end
 end
+
+FizzBuzz.run(1..100)
 ```
 
 ## Commit Your Progress
