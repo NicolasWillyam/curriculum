@@ -336,7 +336,7 @@ It's useful to be aware that you can use ranges with enumerables to easily enume
 ranges without needing to define every element in the list.
 
 ```elixir
-Enum.map(1..100, fn integer -> integer * 2 end)
+Enum.map(1..100, fn integer -> integer ** 2 end)
 ```
 
 [Enum.map/2](https://hexdocs.pm/elixir/Enum.html#map/2) accepts any enumerable, and always returns a list, regardless of the input.
@@ -369,7 +369,7 @@ Use [Enum.map/2](https://hexdocs.pm/elixir/Enum.html#map/2) to convert a list of
 
 ```elixir
 # Expected Output
-["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 ```
 
 <details style="background-color: lightgreen; padding: 1rem; margin: 1rem 0;">
@@ -384,7 +384,7 @@ Enum.map(1..10, fn integer -> "#{integer}" end)
 Enter your solution below.
 
 ```elixir
-
+Enum.map(1..10, fn int -> "#{int}" end)
 ```
 
 ## Enum.reduce/2 And Enum.reduce/3
@@ -475,7 +475,7 @@ Alternatively, we can provide a default value for the accumulator with [Enum.red
 [Enum.reduce/3](https://hexdocs.pm/elixir/Enum.html#reduce/3) will call the function on every element, rather than setting the initial accumulator as the first element. Below, we sum all of the numbers in the list, with an initial sum of `10`.
 
 ```elixir
-Enum.reduce([1, 2, 3], 10, fn integer, accumulator -> integer + accumulator end)
+Enum.reduce([1, 2, 3], 100, fn integer, accumulator -> integer + accumulator end)
 ```
 
 ### Your Turn
@@ -506,7 +506,14 @@ end)
 Enter your solution below.
 
 ```elixir
-
+Enum.reduce(1..10, 0, fn interger, accumulator ->
+  if rem(interger, 2) == 0 do
+    IO.inspect(interger)
+    accumulator + interger
+  else
+    accumulator
+  end
+end)
 ```
 
 ## Enum.filter
@@ -544,7 +551,11 @@ odd_numbers = Enum.filter(1..10, fn integer -> rem(integer, 2) != 0 end)
 Enter your solution below.
 
 ```elixir
+even_list = Enum.filter(1..10, fn int -> rem(int, 2) == 1 end)
+odd_list = Enum.filter(1..10, fn int -> rem(int, 2) == 0 end)
 
+IO.inspect(even_list)
+IO.inspect(odd_list)
 ```
 
 ## Enum.all?/2
@@ -595,6 +606,8 @@ Use [Enum.all/2](https://hexdocs.pm/elixir/Enum.html#all/2) to determine if all 
 
 ```elixir
 colors = [:green, :green, :red]
+
+Enum.all?(colors, fn colors -> colors == :green end)
 ```
 
 ## Enum.any?/2
@@ -635,6 +648,8 @@ Use [Enum.any?/2](https://hexdocs.pm/elixir/Enum.html#any?/2) to determine if an
 
 ```elixir
 animals = [:cats, :dogs, :bears, :lions, :penguins]
+
+Enum.any?(animals, fn animals -> animals == :dogs end)
 ```
 
 ## Enum.count/1
@@ -662,6 +677,8 @@ In the Elixir cell below, count the number of elements in the `collection`. It s
 
 ```elixir
 collection = [1, 2, 3, 4, 5]
+
+Enum.count(collection)
 ```
 
 ## Enum.find/3
@@ -681,7 +698,7 @@ Enum.find(["h", "e", "l", "l", "o"], fn each -> is_integer(each) end)
 You might notice the arity of the function is `3` even though we passed in only `2` arguments. That's because there's an optional `default` value argument. The `default` value will be returned instead of `nil` if no element is found.
 
 ```elixir
-Enum.find(["h", "e", "l", "l", "o"], 10, fn each -> is_integer(each) end)
+Enum.find(["h", "e", "l", "l", "o"], 0, fn each -> is_integer(each) end)
 ```
 
 ### Your Turn
@@ -689,7 +706,9 @@ Enum.find(["h", "e", "l", "l", "o"], 10, fn each -> is_integer(each) end)
 Use [Enum.find/2](https://hexdocs.pm/elixir/Enum.html#find/2) to find the first even integer in this list.
 
 ```elixir
-[1, "2", "three", 4, "five", 6]
+list = [1, "2", "three", 1, "five", 6]
+
+Enum.find(list, -1, fn each -> is_integer(each) end)
 ```
 
 ## Enum.random/1
@@ -716,7 +735,7 @@ Enum.map(1..10, fn _ -> Enum.random(0..9) end)
 Enter your solution below.
 
 ```elixir
-
+Enum.map(1..10, fn _ -> Enum.random(0..9) end)
 ```
 
 ## Capture Operator And Module Functions
