@@ -506,10 +506,10 @@ end)
 Enter your solution below.
 
 ```elixir
-Enum.reduce(1..10, 0, fn interger, accumulator ->
-  if rem(interger, 2) == 0 do
-    IO.inspect(interger)
-    accumulator + interger
+Enum.reduce(1..10, 0, fn integer, accumulator ->
+  if rem(integer, 2) == 0 do
+    IO.inspect(integer)
+    accumulator + integer
   else
     accumulator
   end
