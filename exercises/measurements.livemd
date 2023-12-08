@@ -82,6 +82,10 @@ defmodule Measurements do
     [10, -10, 30]
   """
   def increments(measurements) do
+    Enum.reduce(measurements, 0, fn int, acc ->
+      int - acc
+      IO.inspect(int - acc)
+    end)
   end
 
   @doc """
@@ -115,6 +119,7 @@ defmodule Measurements do
     40
   """
   def increased_by(measurements) do
+    Enum.reduce(measurements, 0, fn int, acc -> int - acc end)
   end
 
   @doc """
