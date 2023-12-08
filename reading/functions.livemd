@@ -381,7 +381,8 @@ However, you define the function with `&()` and put the function body between th
 Here's the same `double` function using short-hand syntax.
 
 ```elixir
-double = &(&1 * 2)
+# double = &(&1 * 2)
+double = fn int -> int * 2 end
 double.(5)
 ```
 
