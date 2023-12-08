@@ -86,6 +86,7 @@ defmodule Palindrome do
     false
   """
   def palindrome?(string) do
+    String.reverse(string) == string
   end
 end
 ```
