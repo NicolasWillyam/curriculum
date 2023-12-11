@@ -260,6 +260,12 @@ end
 
 ```elixir
 defmodule CountDown do
+  def count(0), do: IO.inspect(0)
+
+  def count(n) do
+    IO.inspect(n)
+    count(n - 1)
+  end
 end
 ```
 
@@ -323,6 +329,17 @@ end
 
 ```elixir
 defmodule CountBetween do
+  def count(finish, finish), do: IO.puts(finish)
+
+  def count(start, finish) when start < finish do
+    IO.puts(start)
+    count(start + 1, finish)
+  end
+
+  def count(start, finish) when start > finish do
+    IO.puts(start)
+    count(start - 1, finish)
+  end
 end
 ```
 
