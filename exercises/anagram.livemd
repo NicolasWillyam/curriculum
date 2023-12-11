@@ -83,6 +83,7 @@ defmodule Anagram do
     true
   """
   def anagram?(word, possible_anagram) do
+    sort_string(word) == sort_string(possible_anagram)
   end
 
   @doc """
@@ -100,6 +101,12 @@ defmodule Anagram do
     []
   """
   def filter_anagrams(word_list, anagram) do
+    Enum.filter(word_list, fn word -> anagram?(word, anagram) end)
+  end
+
+  defp sort_string(string) do
+    # Enum.join((Enum.sort(String.split(string, "", strim: true))))
+    String.split(string, "", strim: true) |> Enum.sort() |> Enum.join()
   end
 end
 ```
