@@ -212,7 +212,7 @@ String.codepoints("é")
 ```
 
 ```elixir
-String.codepoints("é")
+String.codepoints("b")
 ```
 
 When splitting a string into characters for the sake of enumeration, it's important to know if you want to enumerate through the
@@ -230,13 +230,13 @@ String.graphemes("é")
 Use [String.graphemes/1](https://hexdocs.pm/elixir/String.html#graphemes/1) to convert the [woman fire fighter](https://emojipedia.org/woman-firefighter/) emoji 👩‍🚒 to a list of graphemes.
 
 ```elixir
-
+String.graphemes("👩‍🚒")
 ```
 
 Use [String.codepoints/1](https://hexdocs.pm/elixir/String.html#codepoints/1) to convert the emoji 👩‍🚒 into a list of codepoints. You'll notice it's actually a combination of the 👩 and 🚒 emojis.
 
 ```elixir
-
+String.codepoints("👩‍🚒")
 ```
 
 ## Hexadecimal
@@ -328,7 +328,7 @@ Use hexadecimal `0x` syntax to represent the number `15`.
 </details>
 
 ```elixir
-
+0xF
 ```
 
 ## Bitstrings
@@ -372,7 +372,7 @@ not be interpreted as a charlist.
 You can define a charlist using single quotes `''`.
 
 ```elixir
-'hello'
+~c"hello"
 ```
 
 This charlist is equivalent to a list of the code points for a string.
@@ -385,13 +385,13 @@ Charlists are a list of integers, so they can be enumerated through and will ret
 charlist. Here's how we could shift each character up one code point.
 
 ```elixir
-Enum.map('abcde', fn each -> each + 1 end)
+Enum.map(~c"abcde", fn each -> each + 1 end)
 ```
 
 You can convert a charlist back into a string with [List.to_string/1](https://hexdocs.pm/elixir/List.html#to_string/1).
 
 ```elixir
-List.to_string('hello')
+List.to_string(~c"hello")
 ```
 
 Or convert a string into a charlist with [String.to_charlist/1](https://hexdocs.pm/elixir/String.html#to_charlist/1).
@@ -428,7 +428,9 @@ Convert the alphabet `"abcdefghijklmnopqrstuvwxyz"` to a charlist, then inspect 
 </details>
 
 ```elixir
-
+"abcdefghijklmnopqrstuvwxyz"
+|> String.to_charlist()
+|> IO.inspect(charlists: :as_lists)
 ```
 
 ## Further Reading
