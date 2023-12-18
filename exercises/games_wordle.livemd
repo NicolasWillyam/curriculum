@@ -108,7 +108,9 @@ iex> Games.Wordle.feedback("aaabb", "xaaaa")
 [:grey, :green, :green, :yellow, :grey]
 ```
 
-<!-- livebook:{"break_markdown":true} -->
+```elixir
+
+```
 
 ### Play
 

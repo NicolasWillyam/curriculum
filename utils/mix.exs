@@ -21,7 +21,7 @@ defmodule Utils.MixProject do
 
   defp deps do
     [
-      {:credo, "~> 1.6", runtime: false, only: [:dev, :test]},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:livebook_formatter, "~> 0.1.2", runtime: false},
       {:jason, "~> 1.4"}
     ]
