@@ -166,7 +166,7 @@ defmodule FailingTestWithMessage do
   use ExUnit.Case
 
   test "failing example" do
-    assert false, "This message will display for a failing test."
+    assert false, "Faling Test"
   end
 end
 
