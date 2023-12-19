@@ -105,7 +105,7 @@ defmodule PatternParamExample do
     IO.inspect(a, label: "a")
     IO.inspect(b, label: "b")
     IO.inspect(c, label: "c")
-    IO.inspect(param1, label: "c")
+    IO.inspect(param1, label: "param1")
   end
 end
 
@@ -191,7 +191,7 @@ defmodule Check do
       iex> Check.must_have_elements!([])
       ** (FunctionClauseError) no function clause matching in Check.must_have_elements!/1
   """
-  def must_have_elements!([_head | _tail] = list) do
+  def must_have_elements!([head | tail] = list) do
     true
   end
 end
@@ -220,16 +220,16 @@ We can use pattern matching with multi-clause functions. This essentially uses m
 defmodule SingleCaseExample do
   def run(param) do
     case param do
-      [] -> "1"
-      [_] -> "2"
-      [_, _] -> "3"
+      [] -> "0"
+      [_] -> "1"
+      [_, _] -> "2"
     end
   end
 end
 
-SingleCaseExample.run([]) |> IO.inspect(label: "first")
-SingleCaseExample.run([1]) |> IO.inspect(label: "second")
-SingleCaseExample.run([1, 1]) |> IO.inspect(label: "third")
+SingleCaseExample.run([]) |> IO.inspect(label: "zero")
+SingleCaseExample.run([1]) |> IO.inspect(label: "first")
+SingleCaseExample.run([1, 1]) |> IO.inspect(label: "second")
 ```
 
 ```elixir
@@ -297,6 +297,13 @@ defmodule Greeter do
       "Hello everyone!"
   """
   def hello(names) do
+    [head | tail] = names
+
+    case names do
+      [_] -> "Hi #{head}!"
+      [_, _] -> "Hi #{head}, Hello #{tail}!"
+      [_, _, _] -> "Hello everyone!"
+    end
   end
 end
 ```
@@ -359,7 +366,12 @@ end)
 </details>
 
 ```elixir
+enumerable = [{:double, 2}, {:halve, 10}, {:double, 4}]
 
+Enum.map(enumerable, fn
+  {:double, value} -> value * 2
+  {:halve, value} -> div(value, 2)
+end)
 ```
 
 ## Pattern Matching Vs. If
@@ -399,7 +411,7 @@ defmodule MessageNestedIfExample do
   end
 end
 
-MessageNestedIfExample.send(%{is_admin: true}, "")
+MessageNestedIfExample.send(%{is_admin: true}, "ok")
 ```
 
 Nested `if` statements are generally a clue that we should consider an alternative implementation.
@@ -528,7 +540,7 @@ actual = {"hello", "hi"}
 expected = {"hello"}
 actual = {"hello", "hi"}
 
-expected = actual
+^expected = actual
 ```
 
 ## Further Reading
