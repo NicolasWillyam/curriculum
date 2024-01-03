@@ -88,7 +88,7 @@ end
 Change the value of `user` below to hit every case in the `else` clause (one at a time.)
 
 ```elixir
-user = %{name: "Jon", is_admin: false}
+user = %{name: "Jon", is_admin: true}
 
 with %{name: name, is_admin: true} <- user do
   IO.puts("admin #{name} is authorized.")
