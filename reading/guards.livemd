@@ -245,9 +245,12 @@ end
 
 ```elixir
 defmodule Say do
-  def hello(name) do
+  def hello(name) when is_binary(name) do
+    "Hello, #{name}!"
   end
 end
+
+Say.hello("Hoang")
 ```
 
 ### Your Turn
@@ -289,9 +292,12 @@ Enter your solution below.
 
 ```elixir
 defmodule Percent do
-  def display(percent) do
+  def display(percent) when is_number(percent) do
+    "#{percent}%"
   end
 end
+
+Percent.display(100)
 ```
 
 ## Further Reading
