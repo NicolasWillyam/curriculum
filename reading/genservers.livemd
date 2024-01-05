@@ -410,7 +410,7 @@ We can use `:sys.get_state/2` to view the state of a GenServer. This should **on
 ```elixir
 {:ok, pid} = GenServer.start_link(CounterServer, [])
 
-:sys.get_state(pid)
+:sys.get_state(
 ```
 
 ## Named Processes
@@ -422,7 +422,7 @@ Named processes are unique, there cannot be two processes with the same name. Na
 ```elixir
 defmodule NamedCounter do
   def start_link(_opts) do
-    GenServer.start_link(NamedCounter, [], name: NamedCounter)
+    GenServer.start_link(NamedCounter, [], name: Counter)
   end
 
   def init(_init_arg) do
