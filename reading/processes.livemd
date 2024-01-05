@@ -224,7 +224,9 @@ Spawn a linked process and crash this Elixir cell below.
 Comment out your solution when complete to avoid continuously crashing the livebook!
 
 ```elixir
-
+pid1 = spawn(fn -> raise "oops" end)
+Process.link(pid1)
+"I will not run, because the above crashes"
 ```
 
 ## Message Passing
@@ -270,7 +272,11 @@ In the Elixir cell below, spawn a new process and send it a message `{:hello, "w
 `IO.puts` the message's payload where `"world"` is the payload.
 
 ```elixir
+send(self(), {:hello, "world"})
 
+receive do
+  {:hello, payload} -> payload
+end
 ```
 
 ## State
