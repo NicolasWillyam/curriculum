@@ -446,7 +446,7 @@ So the timeline of crashes would be:
 Start **four** `Bomb` processes under a supervisor with different bomb times. Try each restart strategy `:one_for_one`, `one_for_all`, and `:rest_for_one`. Predict the crash timeline then evaluate your code. Did the result match your prediction?
 
 ```elixir
-
+# {:ok, Supervisor_pid} = Supervisor.start_link(children, Strategy: :one_for_all, Max_restarts: 10)
 ```
 
 ## Syntax Sugar

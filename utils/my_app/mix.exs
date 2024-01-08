@@ -1,11 +1,11 @@
-defmodule Utils.MixProject do
+defmodule MyApp.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :utils,
+      app: :my_app,
       version: "0.1.0",
-      elixir: "~> 1.13",
+      elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -15,15 +15,15 @@ defmodule Utils.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Utils.Application, MyApp.Application, []}
+      mod: {MyApp.Application, []}
     ]
   end
 
+  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:livebook_formatter, "~> 0.1.2", runtime: false},
-      {:jason, "~> 1.4"}
+      # {:dep_from_hexpm, "~> 0.3.0"},
+      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
 end
