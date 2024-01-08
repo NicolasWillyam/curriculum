@@ -15,7 +15,7 @@ defmodule Utils.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Utils.Application, MyApp.Application, []}
+      mod: {Utils.Application, []}
     ]
   end
 
