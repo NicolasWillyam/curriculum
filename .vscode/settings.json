@@ -1,4 +1,6 @@
 {
+    "elixirLS.mixEnv": "dev",
+    "elixirLS.suggestSpecifications": true,
     "cSpell.enabled": true,
     "cSpell.enableFiletypes": [
         "livemarkdown"

@@ -23,7 +23,8 @@ defmodule Utils.MixProject do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:livebook_formatter, "~> 0.1.2", runtime: false},
-      {:jason, "~> 1.4"}
+      {:jason, "~> 1.4"},
+      {:finch, "~> 2.0"}
     ]
   end
 end
