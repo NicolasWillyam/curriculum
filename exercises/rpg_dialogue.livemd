@@ -29,7 +29,6 @@ Mix.install([
 <i class="ri-arrow-right-fill"></i>
 </div>
 </div>
-
 ## Overview
 
 In this exercise, you will create dialogue for an RPG (Role Playing Game).
@@ -232,7 +231,6 @@ DockYard Academy now recommends you use the latest [Release](https://github.com/
 
 Run `git status` to ensure there are no undesirable changes.
 Then run the following in your command line from the `curriculum` folder to commit your progress.
-
 ```
 $ git add .
 $ git commit -m "finish RPG Dialogue exercise"
@@ -243,7 +241,6 @@ We're proud to offer our open-source curriculum free of charge for anyone to lea
 
 We also offer a paid course where you can learn from an instructor alongside a cohort of your peers.
 We will accept applications for the June-August 2023 cohort soon.
-
 ## Navigation
 
 <div style="display: flex; align-items: center; width: 100%; justify-content: space-between; font-size: 1rem; color: #61758a; background-color: #f0f5f9; height: 4rem; padding: 0 1rem; border-radius: 1rem;">
